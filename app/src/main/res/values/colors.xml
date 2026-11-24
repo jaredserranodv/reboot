@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta estilo Amazon -->
+    <color name="reboot_header">#131A22</color>
+    <color name="reboot_header_superficie">#232F3E</color>
+    <color name="reboot_acento">#FF9900</color>
+    <color name="reboot_texto_sobre_acento">#131A22</color>
+    <color name="reboot_fondo">#FFFFFF</color>
+    <color name="reboot_tarjeta">#F3F3F3</color>
+    <color name="reboot_texto_principal">#0F1111</color>
+    <color name="reboot_texto_secundario">#565959</color>
+    <color name="reboot_enlace">#007185</color>
+    <color name="reboot_texto_inactivo_sobre_header">#9DA7B0</color>
+
+    <!-- Colores para TextInputLayout y dropdowns -->
+    <color name="reboot_borde_campo">#D5D9D9</color>
+    <color name="reboot_error">#D13212</color>
+</resources>

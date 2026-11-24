@@ -1,0 +1,172 @@
+<resources>
+    <string name="app_name">Reboot</string>
+
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_buscar">Buscar</string>
+    <string name="nav_vender">Vender</string>
+    <string name="nav_buzon">Buzón</string>
+    <string name="nav_perfil">Perfil</string>
+
+    <string name="inicio_titulo">Inicio</string>
+    <string name="inicio_articulos_publicados">Artículos publicados</string>
+
+    <string name="login_titulo">Iniciar sesión</string>
+    <string name="login_tagline">Compra y vende tecnología y electrónica de segunda mano</string>
+    <string name="login_correo">Correo electrónico</string>
+    <string name="login_contrasena">Contraseña</string>
+    <string name="login_boton_entrar">Iniciar sesión</string>
+    <string name="login_separador_o">— o —</string>
+    <string name="login_enlace_registro">¿No tienes cuenta? Regístrate</string>
+    <string name="login_enlace_olvide_contrasena">¿Olvidaste tu contraseña?</string>
+
+    <string name="recuperar_titulo">Recuperar contraseña</string>
+    <string name="recuperar_paso1_titulo">Paso 1: tu correo</string>
+    <string name="recuperar_boton_enviar_codigo">Enviar código de verificación</string>
+    <string name="recuperar_paso2_titulo">Paso 2: verificación</string>
+    <string name="recuperar_campo_codigo">Código de verificación</string>
+    <string name="recuperar_campo_respuesta">Respuesta de seguridad</string>
+    <string name="recuperar_boton_verificar">Verificar</string>
+    <string name="recuperar_paso3_titulo">Paso 3: nueva contraseña</string>
+    <string name="recuperar_boton_restablecer">Restablecer contraseña</string>
+    <string name="recuperar_exito">Contraseña actualizada, ahora inicia sesión</string>
+
+    <string name="compras_titulo">Mis compras</string>
+    <string name="compras_pestana_todas">Todas</string>
+    <string name="compras_pestana_entregadas">Entregadas</string>
+    <string name="compras_boton_resenar">Reseñar</string>
+    <string name="compras_vacio">Aún no has comprado nada</string>
+
+    <string name="resena_titulo">Dejar reseña</string>
+    <string name="resena_comentario">Comentario</string>
+    <string name="resena_recomendaria">Recomendaría a este vendedor</string>
+    <string name="resena_boton_enviar">Enviar reseña</string>
+    <string name="resena_enviada">¡Gracias por tu reseña!</string>
+
+    <string name="resenar_comprador_titulo">Reseñar comprador</string>
+    <string name="resenar_comprador_pregunta">¿Cómo calificarías a este comprador?</string>
+    <string name="resenar_comprador_recomendaria">Recomendaría vender a esta persona</string>
+
+    <string name="publicaciones_titulo">Mis publicaciones</string>
+    <string name="publicaciones_vacio">Aún no has publicado artículos</string>
+    <string name="publicaciones_badge_activo">Activo</string>
+    <string name="publicaciones_badge_vendido">Vendido</string>
+    <string name="publicaciones_boton_editar">Editar</string>
+    <string name="publicaciones_boton_reactivar">Reactivar</string>
+    <string name="publicaciones_boton_resenar_comprador">Reseñar comprador</string>
+
+    <string name="direcciones_titulo">Mis direcciones</string>
+    <string name="direcciones_vacio">No tienes direcciones guardadas</string>
+    <string name="direcciones_badge_predeterminada">Predeterminada</string>
+    <string name="direcciones_boton_editar">Editar</string>
+    <string name="direcciones_boton_eliminar">Eliminar</string>
+    <string name="direcciones_boton_agregar">+ Agregar dirección</string>
+    <string name="direcciones_campo_etiqueta">Etiqueta (Casa, Oficina…)</string>
+    <string name="direcciones_campo_telefono">Teléfono</string>
+    <string name="direcciones_campo_predeterminada">Usar como predeterminada</string>
+    <string name="direcciones_boton_guardar">Guardar dirección</string>
+    <string name="direcciones_agregar_titulo">Agregar dirección</string>
+    <string name="direcciones_editar_titulo">Editar dirección</string>
+    <string name="direcciones_campo_calle">Calle y número</string>
+    <string name="direcciones_campo_colonia">Colonia</string>
+    <string name="direcciones_campo_ciudad">Ciudad</string>
+    <string name="direcciones_campo_codigo_postal">Código postal</string>
+
+    <string name="metodos_pago_titulo">Métodos de pago</string>
+    <string name="metodos_pago_vacio">No tienes métodos de pago guardados</string>
+    <string name="metodos_pago_badge_predeterminado">Predeterminado</string>
+    <string name="metodos_pago_boton_eliminar">Eliminar</string>
+    <string name="metodos_pago_boton_agregar">+ Agregar tarjeta</string>
+    <string name="metodos_pago_campo_numero">Número de tarjeta</string>
+    <string name="metodos_pago_campo_mes">Mes (MM)</string>
+    <string name="metodos_pago_campo_anio">Año (AAAA)</string>
+    <string name="metodos_pago_campo_predeterminado">Usar como predeterminado</string>
+    <string name="metodos_pago_boton_guardar">Guardar tarjeta</string>
+    <string name="metodos_pago_agregar_titulo">Agregar tarjeta</string>
+    <string name="metodos_pago_campo_nombre_tarjeta">Nombre en la tarjeta</string>
+    <string name="metodos_pago_campo_vencimiento">Vencimiento (MM/AA)</string>
+    <string name="metodos_pago_footer_simulacion">Simulación: no se procesan pagos reales</string>
+    <string name="metodos_pago_error_vencimiento">Fecha de vencimiento invalida</string>
+
+    <string name="registro_titulo">Crear cuenta</string>
+    <string name="registro_nombre">Nombre completo</string>
+    <string name="registro_correo">Correo electrónico</string>
+    <string name="registro_telefono">Teléfono</string>
+    <string name="registro_pregunta_seguridad">Pregunta de seguridad</string>
+    <string name="registro_respuesta_seguridad">Respuesta de seguridad</string>
+    <string name="registro_contrasena">Contraseña</string>
+    <string name="registro_confirmar_contrasena">Confirmar contraseña</string>
+    <string name="registro_terminos">Acepto los términos y condiciones</string>
+    <string name="registro_boton_crear">Crear cuenta</string>
+    <string name="registro_enlace_login">¿Ya tienes cuenta? Inicia sesión</string>
+    <string name="registro_error_terminos">Debes aceptar los términos y condiciones</string>
+
+    <string name="buscar_placeholder">Buscar artículos…</string>
+    <string name="buscar_recientes_titulo">Búsquedas recientes</string>
+    <string name="buscar_categorias_titulo">Categorías populares</string>
+
+    <string name="resultados_titulo">Resultados</string>
+    <string name="resultados_filtros">Filtros</string>
+    <string name="resultados_filtro_categoria">Categoría</string>
+    <string name="resultados_filtro_precio">Precio</string>
+    <string name="resultados_filtro_ubicacion">Ubicación</string>
+    <string name="resultados_filtro_estado">Estado</string>
+    <string name="resultados_vacio">No se encontraron artículos</string>
+    <string name="resultados_aplicar_filtros">Aplicar filtros</string>
+
+    <string name="detalle_boton_comprar">Comprar ahora</string>
+    <string name="detalle_vendedor_titulo">Vendedor</string>
+    <string name="detalle_descripcion_titulo">Descripción</string>
+
+    <string name="pago_titulo">Pago</string>
+    <string name="pago_resumen_titulo">Resumen de compra</string>
+    <string name="pago_total">Total</string>
+    <string name="pago_numero_tarjeta">Número de tarjeta</string>
+    <string name="pago_fecha_vencimiento">MM/AA</string>
+    <string name="pago_cvv">CVV</string>
+    <string name="pago_direccion_envio">Dirección de envío</string>
+    <string name="pago_boton_confirmar">Confirmar pago</string>
+    <string name="pago_confirmado_titulo">¡Pago confirmado!</string>
+
+    <string name="confirmacion_titulo">Compra confirmada</string>
+    <string name="confirmacion_mensaje">Tu compra se realizó con éxito</string>
+    <string name="confirmacion_total">Total pagado</string>
+    <string name="confirmacion_direccion_titulo">Se enviará a</string>
+    <string name="confirmacion_boton_ver_compras">Ver mis compras</string>
+
+    <string name="vender_titulo">Vender artículo</string>
+    <string name="vender_fotos_titulo">Fotos (máximo 3)</string>
+    <string name="vender_campo_titulo">Título</string>
+    <string name="vender_categoria">Categoría</string>
+    <string name="vender_descripcion">Descripción</string>
+    <string name="vender_estado">Estado del artículo</string>
+    <string name="vender_precio">Precio</string>
+    <string name="vender_ciudad">Ciudad</string>
+    <string name="vender_boton_publicar">Publicar</string>
+
+    <string name="editar_articulo_titulo">Editar artículo</string>
+    <string name="editar_articulo_boton_guardar">Guardar cambios</string>
+    <string name="editar_articulo_boton_eliminar">Eliminar publicación</string>
+    <string name="editar_articulo_confirmar_eliminar">¿Eliminar esta publicación? Esta acción no se puede deshacer.</string>
+    <string name="editar_articulo_eliminada">Publicación eliminada</string>
+
+    <string name="buzon_titulo">Buzón</string>
+    <string name="buzon_vacio">No tienes notificaciones</string>
+
+    <string name="perfil_publicaciones">Publicaciones</string>
+    <string name="perfil_compras">Compras</string>
+    <string name="perfil_mis_publicaciones">Mis publicaciones</string>
+    <string name="perfil_mis_compras">Mis compras</string>
+    <string name="perfil_metodos_pago">Métodos de pago</string>
+    <string name="perfil_direcciones_envio">Direcciones de envío</string>
+    <string name="perfil_cerrar_sesion">Cerrar sesión</string>
+
+    <string name="editar_perfil_titulo">Editar perfil</string>
+    <string name="editar_perfil_campo_nombre">Nombre completo</string>
+    <string name="editar_perfil_campo_telefono">Teléfono</string>
+    <string name="editar_perfil_boton_guardar">Guardar cambios</string>
+    <string name="editar_perfil_guardado">Perfil actualizado</string>
+
+    <string name="accion_aceptar">Aceptar</string>
+    <string name="accion_cancelar">Cancelar</string>
+    <string name="error_campo_obligatorio">Este campo es obligatorio</string>
+</resources>

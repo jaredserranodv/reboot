@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TODO: definir catalogo final de categorias; valores de ejemplo para electronica usada -->
+    <string-array name="categorias_populares">
+        <item>Celulares</item>
+        <item>Laptops</item>
+        <item>Audio</item>
+        <item>Gaming</item>
+        <item>Televisores</item>
+        <item>Accesorios</item>
+    </string-array>
+
+    <string-array name="estados_articulo">
+        <item>nuevo</item>
+        <item>seminuevo</item>
+        <item>usado</item>
+    </string-array>
+
+    <string-array name="preguntas_seguridad">
+        <item>¿Cuál es el nombre de tu primera mascota?</item>
+        <item>¿En qué ciudad naciste?</item>
+        <item>¿Cuál es el nombre de tu mejor amigo de la infancia?</item>
+        <item>¿Cuál es el nombre de tu escuela primaria?</item>
+        <item>¿Cuál es tu comida favorita?</item>
+        <item>¿Cuál es el segundo nombre de tu madre?</item>
+    </string-array>
+</resources>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reboot_fondo">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tituloResumen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pago_resumen_titulo"
+            android:textAppearance="@style/TextAppearance.Reboot.Titulo"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tituloArticulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textAppearance="@style/TextAppearance.Reboot.Cuerpo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tituloResumen"
+            tools:text="Audifonos Sony" />
+
+        <TextView
+            android:id="@+id/etiquetaTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/pago_total"
+            android:textAppearance="@style/TextAppearance.Reboot.Cuerpo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tituloArticulo" />
+
+        <TextView
+            android:id="@+id/totalPagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="@style/TextAppearance.Reboot.Precio"
+            app:layout_constraintStart_toEndOf="@id/etiquetaTotal"
+            app:layout_constraintTop_toTopOf="@id/etiquetaTotal"
+            tools:text="$3,200" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/contenedorNumeroTarjeta"
+            style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="@string/pago_numero_tarjeta"
+            app:startIconDrawable="@drawable/ic_credit_card"
+            app:layout_constraintTop_toBottomOf="@id/etiquetaTotal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoNumeroTarjeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:inputType="number"
+                android:maxLength="16" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/contenedorFechaVencimiento"
+            style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/pago_fecha_vencimiento"
+            app:startIconDrawable="@drawable/ic_calendar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contenedorNumeroTarjeta">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoFechaVencimiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:inputType="text"
+                android:maxLength="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/contenedorCvv"
+            style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:hint="@string/pago_cvv"
+            app:startIconDrawable="@drawable/ic_lock"
+            app:layout_constraintStart_toEndOf="@id/contenedorFechaVencimiento"
+            app:layout_constraintTop_toBottomOf="@id/contenedorNumeroTarjeta">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoCvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:inputType="numberPassword"
+                android:maxLength="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/contenedorDireccionEnvio"
+            style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/pago_direccion_envio"
+            app:startIconDrawable="@drawable/ic_location"
+            app:layout_constraintTop_toBottomOf="@id/contenedorFechaVencimiento">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/campoDireccionEnvio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:inputType="textPostalAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/indicadorCarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contenedorDireccionEnvio" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonConfirmarPago"
+            style="@style/Widget.Reboot.Boton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/pago_boton_confirmar"
+            app:layout_constraintTop_toBottomOf="@id/indicadorCarga" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

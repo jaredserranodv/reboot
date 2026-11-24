@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/inicioFragment"
+        android:icon="@drawable/ic_nav_inicio"
+        android:title="@string/nav_inicio" />
+    <item
+        android:id="@+id/buscarFragment"
+        android:icon="@drawable/ic_nav_buscar"
+        android:title="@string/nav_buscar" />
+    <item
+        android:id="@+id/venderArticuloFragment"
+        android:icon="@drawable/ic_nav_vender"
+        android:title="@string/nav_vender" />
+    <item
+        android:id="@+id/buzonFragment"
+        android:icon="@drawable/ic_nav_buzon"
+        android:title="@string/nav_buzon" />
+    <item
+        android:id="@+id/perfilFragment"
+        android:icon="@drawable/ic_nav_perfil"
+        android:title="@string/nav_perfil" />
+</menu>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reboot_fondo">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/nombreUsuario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Reboot.Titulo"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@id/botonEditarPerfil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Juan Perez" />
+
+        <ImageView
+            android:id="@+id/botonEditarPerfil"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/editar_perfil_titulo"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/nombreUsuario"
+            app:tint="@color/reboot_texto_secundario" />
+
+        <TextView
+            android:id="@+id/correoUsuario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.Reboot.Cuerpo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nombreUsuario"
+            tools:text="juan@correo.com" />
+
+        <RatingBar
+            android:id="@+id/ratingUsuario"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:stepSize="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/correoUsuario" />
+
+        <LinearLayout
+            android:id="@+id/contenedorContadores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/ratingUsuario">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/totalPublicaciones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Reboot.Precio"
+                    tools:text="12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/perfil_publicaciones"
+                    android:textAppearance="@style/TextAppearance.Reboot.Cuerpo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/totalCompras"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Reboot.Precio"
+                    tools:text="3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/perfil_compras"
+                    android:textAppearance="@style/TextAppearance.Reboot.Cuerpo" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/accesoMisPublicaciones"
+            style="@style/AccesoPerfil"
+            android:text="@string/perfil_mis_publicaciones"
+            app:layout_constraintTop_toBottomOf="@id/contenedorContadores" />
+
+        <TextView
+            android:id="@+id/accesoMisCompras"
+            style="@style/AccesoPerfil"
+            android:text="@string/perfil_mis_compras"
+            app:layout_constraintTop_toBottomOf="@id/accesoMisPublicaciones" />
+
+        <TextView
+            android:id="@+id/accesoMetodosPago"
+            style="@style/AccesoPerfil"
+            android:text="@string/perfil_metodos_pago"
+            app:layout_constraintTop_toBottomOf="@id/accesoMisCompras" />
+
+        <TextView
+            android:id="@+id/accesoDireccionesEnvio"
+            style="@style/AccesoPerfil"
+            android:text="@string/perfil_direcciones_envio"
+            app:layout_constraintTop_toBottomOf="@id/accesoMetodosPago" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonCerrarSesion"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/perfil_cerrar_sesion"
+            android:textColor="@color/reboot_texto_principal"
+            app:strokeColor="@color/reboot_texto_secundario"
+            app:layout_constraintTop_toBottomOf="@id/accesoDireccionesEnvio" />
+
+        <ProgressBar
+            android:id="@+id/indicadorCarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

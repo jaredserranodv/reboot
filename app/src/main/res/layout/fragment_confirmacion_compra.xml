@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reboot_fondo"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/iconoExito"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@null"
+        android:src="@android:drawable/checkbox_on_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/reboot_acento" />
+
+    <TextView
+        android:id="@+id/tituloConfirmacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/confirmacion_titulo"
+        android:textAppearance="@style/TextAppearance.Reboot.Titulo"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iconoExito" />
+
+    <TextView
+        android:id="@+id/mensajeConfirmacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/confirmacion_mensaje"
+        android:textAppearance="@style/TextAppearance.Reboot.Cuerpo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloConfirmacion" />
+
+    <TextView
+        android:id="@+id/tituloArticulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textAppearance="@style/TextAppearance.Reboot.Cuerpo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mensajeConfirmacion"
+        tools:text="Audifonos Sony" />
+
+    <TextView
+        android:id="@+id/etiquetaTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/confirmacion_total"
+        android:textAppearance="@style/TextAppearance.Reboot.Cuerpo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloArticulo" />
+
+    <TextView
+        android:id="@+id/totalPagado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.Reboot.Precio"
+        app:layout_constraintStart_toEndOf="@id/etiquetaTotal"
+        app:layout_constraintTop_toTopOf="@id/etiquetaTotal"
+        tools:text="$450" />
+
+    <TextView
+        android:id="@+id/tituloDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/confirmacion_direccion_titulo"
+        android:textAppearance="@style/TextAppearance.Reboot.Titulo"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etiquetaTotal" />
+
+    <TextView
+        android:id="@+id/direccionEnvio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/TextAppearance.Reboot.Cuerpo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloDireccion"
+        tools:text="Av. Siempre Viva 123, Centro, Puebla, 72000" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonVerCompras"
+        style="@style/Widget.Reboot.Boton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/confirmacion_boton_ver_compras"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.buap.reboot.presentacion.inicio.InicioFragment"
+        android:label="@string/inicio_titulo">
+        <action
+            android:id="@+id/accion_inicio_a_buscar"
+            app:destination="@id/buscarFragment" />
+        <action
+            android:id="@+id/accion_inicio_a_resultados"
+            app:destination="@id/resultadosBusquedaFragment" />
+        <action
+            android:id="@+id/accion_inicio_a_detalle"
+            app:destination="@id/detalleArticuloFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/buscarFragment"
+        android:name="com.buap.reboot.presentacion.busqueda.BuscarFragment"
+        android:label="@string/nav_buscar">
+        <action
+            android:id="@+id/accion_buscar_a_resultados"
+            app:destination="@id/resultadosBusquedaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultadosBusquedaFragment"
+        android:name="com.buap.reboot.presentacion.resultadosBusqueda.ResultadosBusquedaFragment"
+        android:label="@string/resultados_titulo">
+        <argument android:name="texto" app:argType="string" android:defaultValue="" />
+        <argument android:name="categoria" app:argType="string" android:defaultValue="" />
+        <action
+            android:id="@+id/accion_resultados_a_detalle"
+            app:destination="@id/detalleArticuloFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalleArticuloFragment"
+        android:name="com.buap.reboot.presentacion.detalleArticulo.DetalleArticuloFragment"
+        android:label="">
+        <argument android:name="idArticulo" app:argType="long" />
+        <action
+            android:id="@+id/accion_detalle_a_pago"
+            app:destination="@id/pagoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pagoFragment"
+        android:name="com.buap.reboot.presentacion.pago.PagoFragment"
+        android:label="@string/pago_titulo">
+        <argument android:name="idArticulo" app:argType="long" />
+        <action
+            android:id="@+id/accion_pago_a_confirmacion"
+            app:destination="@id/confirmacionCompraFragment"
+            app:popUpTo="@id/buscarFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmacionCompraFragment"
+        android:name="com.buap.reboot.presentacion.confirmacionCompra.ConfirmacionCompraFragment"
+        android:label="@string/confirmacion_titulo">
+        <argument android:name="idTransaccion" app:argType="long" />
+        <action
+            android:id="@+id/accion_confirmacion_a_compras"
+            app:destination="@id/misComprasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/venderArticuloFragment"
+        android:name="com.buap.reboot.presentacion.venderArticulo.VenderArticuloFragment"
+        android:label="@string/vender_titulo" />
+
+    <fragment
+        android:id="@+id/buzonFragment"
+        android:name="com.buap.reboot.presentacion.notificaciones.BuzonFragment"
+        android:label="@string/buzon_titulo" />
+
+    <!--
+        Subgrafo anidado con id = item del menu inferior ("perfilFragment"), para que
+        NavigationUI reconozca cualquier pantalla de este cluster como parte de la pestaña
+        "Perfil" y mantenga el icono resaltado correctamente (antes el grafo era plano y
+        el resaltado se quedaba pegado en la ultima pestana realmente emparejada).
+    -->
+    <navigation
+        android:id="@+id/perfilFragment"
+        app:startDestination="@id/perfilPantallaFragment">
+
+        <fragment
+            android:id="@+id/perfilPantallaFragment"
+            android:name="com.buap.reboot.presentacion.perfil.PerfilFragment"
+            android:label="@string/nav_perfil">
+            <action
+                android:id="@+id/accion_perfil_a_editar_perfil"
+                app:destination="@id/editarPerfilFragment" />
+            <action
+                android:id="@+id/accion_perfil_a_publicaciones"
+                app:destination="@id/misPublicacionesFragment" />
+            <action
+                android:id="@+id/accion_perfil_a_compras"
+                app:destination="@id/misComprasFragment" />
+            <action
+                android:id="@+id/accion_perfil_a_direcciones"
+                app:destination="@id/direccionesFragment" />
+            <action
+                android:id="@+id/accion_perfil_a_metodos_pago"
+                app:destination="@id/metodosPagoFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/editarPerfilFragment"
+            android:name="com.buap.reboot.presentacion.editarPerfil.EditarPerfilFragment"
+            android:label="@string/editar_perfil_titulo" />
+
+        <fragment
+            android:id="@+id/misPublicacionesFragment"
+            android:name="com.buap.reboot.presentacion.misPublicaciones.MisPublicacionesFragment"
+            android:label="@string/publicaciones_titulo">
+            <action
+                android:id="@+id/accion_publicaciones_a_editar_articulo"
+                app:destination="@id/editarArticuloFragment" />
+            <action
+                android:id="@+id/accion_publicaciones_a_resenar_comprador"
+                app:destination="@id/resenarCompradorFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/editarArticuloFragment"
+            android:name="com.buap.reboot.presentacion.editarArticulo.EditarArticuloFragment"
+            android:label="@string/editar_articulo_titulo">
+            <argument android:name="idArticulo" app:argType="long" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/resenarCompradorFragment"
+            android:name="com.buap.reboot.presentacion.resenarComprador.ResenarCompradorFragment"
+            android:label="@string/resenar_comprador_titulo">
+            <argument android:name="idTransaccion" app:argType="long" />
+            <argument android:name="idArticulo" app:argType="long" />
+            <argument android:name="idComprador" app:argType="long" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/misComprasFragment"
+            android:name="com.buap.reboot.presentacion.misCompras.MisComprasFragment"
+            android:label="@string/compras_titulo">
+            <action
+                android:id="@+id/accion_compras_a_resena"
+                app:destination="@id/dejarResenaFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/dejarResenaFragment"
+            android:name="com.buap.reboot.presentacion.dejarResena.DejarResenaFragment"
+            android:label="@string/resena_titulo">
+            <argument android:name="idTransaccion" app:argType="long" />
+            <argument android:name="idArticulo" app:argType="long" />
+            <argument android:name="idVendedor" app:argType="long" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/direccionesFragment"
+            android:name="com.buap.reboot.presentacion.direcciones.DireccionesFragment"
+            android:label="@string/direcciones_titulo">
+            <action
+                android:id="@+id/accion_direcciones_a_agregar"
+                app:destination="@id/agregarDireccionFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/agregarDireccionFragment"
+            android:name="com.buap.reboot.presentacion.direcciones.AgregarDireccionFragment"
+            android:label="@string/direcciones_agregar_titulo">
+            <argument
+                android:name="idDireccion"
+                app:argType="long"
+                android:defaultValue="-1L" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/metodosPagoFragment"
+            android:name="com.buap.reboot.presentacion.metodosPago.MetodosPagoFragment"
+            android:label="@string/metodos_pago_titulo">
+            <action
+                android:id="@+id/accion_metodos_pago_a_agregar"
+                app:destination="@id/agregarTarjetaFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/agregarTarjetaFragment"
+            android:name="com.buap.reboot.presentacion.metodosPago.AgregarTarjetaFragment"
+            android:label="@string/metodos_pago_agregar_titulo" />
+
+    </navigation>
+
+</navigation>

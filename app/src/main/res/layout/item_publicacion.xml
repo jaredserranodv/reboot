@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/reboot_fondo"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/imagenArticulo"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@color/reboot_tarjeta"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tituloArticulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textAppearance="@style/TextAppearance.Reboot.Titulo"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/badgeEstado"
+            app:layout_constraintStart_toEndOf="@id/imagenArticulo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Audifonos Sony" />
+
+        <TextView
+            android:id="@+id/badgeEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/reboot_tarjeta"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:textAppearance="@style/TextAppearance.Reboot.Cuerpo"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Activo" />
+
+        <TextView
+            android:id="@+id/precioArticulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:textAppearance="@style/TextAppearance.Reboot.Precio"
+            app:layout_constraintStart_toEndOf="@id/imagenArticulo"
+            app:layout_constraintTop_toBottomOf="@id/tituloArticulo"
+            tools:text="$450" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonAccion"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imagenArticulo"
+            tools:text="Editar" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botonResenarComprador"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/publicaciones_boton_resenar_comprador"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/botonAccion"
+            app:layout_constraintTop_toBottomOf="@id/imagenArticulo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

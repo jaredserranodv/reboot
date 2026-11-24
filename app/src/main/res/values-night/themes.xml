@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Reboot" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/reboot_header</item>
+        <item name="colorPrimaryDark">@color/reboot_header</item>
+        <item name="colorAccent">@color/reboot_acento</item>
+        <item name="colorError">@color/reboot_error</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="textInputStyle">@style/Widget.Reboot.TextInputLayout.OutlinedBox</item>
+        <item name="editTextStyle">@style/Widget.Reboot.TextInputEditText</item>
+    </style>
+</resources>
