@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_inicio"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.buap.reboot.presentacion.inicio.InicioFragment"
+        android:label="@string/inicio_titulo">
+        <action
+            android:id="@+id/accion_inicio_a_buscar"
+            app:destination="@id/buscarFragment" />
+        <action
+            android:id="@+id/accion_inicio_a_resultados"
+            app:destination="@id/resultadosBusquedaFragment" />
+        <action
+            android:id="@+id/accion_inicio_a_detalle"
+            app:destination="@id/detalleArticuloFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/buscarFragment"
+        android:name="com.buap.reboot.presentacion.busqueda.BuscarFragment"
+        android:label="@string/nav_buscar">
+        <action
+            android:id="@+id/accion_buscar_a_resultados"
+            app:destination="@id/resultadosBusquedaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultadosBusquedaFragment"
+        android:name="com.buap.reboot.presentacion.resultadosBusqueda.ResultadosBusquedaFragment"
+        android:label="@string/resultados_titulo">
+        <argument android:name="texto" app:argType="string" android:defaultValue="" />
+        <argument android:name="categoria" app:argType="string" android:defaultValue="" />
+        <action
+            android:id="@+id/accion_resultados_a_detalle"
+            app:destination="@id/detalleArticuloFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalleArticuloFragment"
+        android:name="com.buap.reboot.presentacion.detalleArticulo.DetalleArticuloFragment"
+        android:label="@string/detalle_titulo">
+        <argument android:name="idArticulo" app:argType="long" />
+        <action
+            android:id="@+id/accion_detalle_a_pago"
+            app:destination="@id/pagoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pagoFragment"
+        android:name="com.buap.reboot.presentacion.pago.PagoFragment"
+        android:label="@string/pago_titulo">
+        <argument android:name="idArticulo" app:argType="long" />
+        <action
+            android:id="@+id/accion_pago_a_confirmacion"
+            app:destination="@id/confirmacionCompraFragment"
+            app:popUpTo="@id/inicioFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmacionCompraFragment"
+        android:name="com.buap.reboot.presentacion.confirmacionCompra.ConfirmacionCompraFragment"
+        android:label="@string/confirmacion_titulo">
+        <argument android:name="idTransaccion" app:argType="long" />
+        <action
+            android:id="@+id/accion_confirmacion_a_compras"
+            app:destination="@id/misComprasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/misComprasFragment"
+        android:name="com.buap.reboot.presentacion.misCompras.MisComprasFragment"
+        android:label="@string/compras_titulo">
+        <action
+            android:id="@+id/accion_compras_a_resena"
+            app:destination="@id/dejarResenaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dejarResenaFragment"
+        android:name="com.buap.reboot.presentacion.dejarResena.DejarResenaFragment"
+        android:label="@string/resena_titulo">
+        <argument android:name="idTransaccion" app:argType="long" />
+        <argument android:name="idArticulo" app:argType="long" />
+        <argument android:name="idVendedor" app:argType="long" />
+    </fragment>
+</navigation>

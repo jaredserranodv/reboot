@@ -25,5 +25,6 @@ data class NotificacionEntity(
     val titulo: String,
     val mensaje: String,
     val fecha: String,
-    val leida: Boolean
+    val leida: Boolean,
+    @ColumnInfo(name = "id_articulo") val idArticulo: Long? = null
 )

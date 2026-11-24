@@ -3,7 +3,9 @@ package com.buap.reboot.presentacion.notificaciones
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.buap.reboot.R
 import com.buap.reboot.databinding.FragmentBuzonBinding
 import com.buap.reboot.presentacion.comun.FabricaViewModel
 import com.buap.reboot.presentacion.comun.FragmentBase
@@ -21,7 +23,14 @@ class BuzonFragment : FragmentBase<FragmentBuzonBinding>(FragmentBuzonBinding::i
         }
     }
 
-    private val adapter = NotificacionAdapter { notificacion -> viewModel.marcarComoLeida(notificacion.id) }
+    private val adapter = NotificacionAdapter { notificacion ->
+        viewModel.marcarComoLeida(notificacion.id)
+        val idArticulo = notificacion.idArticulo ?: 1L
+        findNavController().navigate(
+            R.id.accion_buzon_a_detalle,
+            Bundle().apply { putLong("idArticulo", idArticulo) }
+        )
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

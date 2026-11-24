@@ -35,7 +35,7 @@ class PublicarArticuloCasoUso(
             idVendedor = idVendedor,
             titulo = titulo.trim(),
             descripcion = descripcion.trim(),
-            categoria = categoria,
+            categoria = categoria.trim(),
             precio = precio,
             estadoArticulo = estadoArticulo,
             ciudad = ciudad.trim(),

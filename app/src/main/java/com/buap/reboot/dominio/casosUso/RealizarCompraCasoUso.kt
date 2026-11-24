@@ -64,7 +64,8 @@ class RealizarCompraCasoUso(
                 titulo = "Pago confirmado",
                 mensaje = "Tu compra de \"${articulo.titulo}\" fue confirmada",
                 fecha = fecha,
-                leida = false
+                leida = false,
+                idArticulo = idArticulo
             )
         )
 

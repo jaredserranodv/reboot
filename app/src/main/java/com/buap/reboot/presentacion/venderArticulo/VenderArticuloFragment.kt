@@ -72,7 +72,12 @@ class VenderArticuloFragment :
 
             if (estado.publicadoExitosamente) {
                 Toast.makeText(requireContext(), "Articulo publicado", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.buscarFragment)
+                val actividadPrincipal = activity as? com.buap.reboot.MainActivity
+                if (actividadPrincipal != null) {
+                    actividadPrincipal.seleccionarPestana(R.id.buscarFragment)
+                } else {
+                    findNavController().navigate(R.id.buscarFragment)
+                }
             }
         }
     }

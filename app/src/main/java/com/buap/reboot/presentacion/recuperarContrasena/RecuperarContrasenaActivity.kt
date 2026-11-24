@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import com.buap.reboot.AplicacionReboot
 import com.buap.reboot.databinding.ActivityRecuperarContrasenaBinding
 import com.buap.reboot.nucleo.Resultado
+import com.buap.reboot.presentacion.comun.ActividadBase
 import com.buap.reboot.presentacion.comun.FabricaViewModel
 
-class RecuperarContrasenaActivity : AppCompatActivity() {
+class RecuperarContrasenaActivity : ActividadBase() {
 
     private lateinit var binding: ActivityRecuperarContrasenaBinding
 
@@ -23,6 +23,8 @@ class RecuperarContrasenaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRecuperarContrasenaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.toolbar.setNavigationOnClickListener { finish() }
 
         binding.botonEnviarCodigo.setOnClickListener {
             when (val resultado = viewModel.enviarCodigo(binding.campoCorreo.text?.toString().orEmpty())) {

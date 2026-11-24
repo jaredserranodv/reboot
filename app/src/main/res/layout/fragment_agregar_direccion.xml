@@ -1,159 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/reboot_fondo">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.Reboot.Toolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="24dp">
+        app:title="@string/direcciones_agregar_titulo"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/contenedorEtiqueta"
-            style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/reboot_fondo"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/direcciones_campo_etiqueta"
-            app:startIconDrawable="@drawable/ic_label"
-            app:layout_constraintTop_toTopOf="parent">
+            android:padding="24dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/campoEtiqueta"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/contenedorEtiqueta"
+                style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:hint="@string/direcciones_campo_etiqueta"
+                app:startIconDrawable="@drawable/ic_label"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/contenedorCalle"
-            style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="@string/direcciones_campo_calle"
-            app:startIconDrawable="@drawable/ic_location"
-            app:layout_constraintTop_toBottomOf="@id/contenedorEtiqueta">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoEtiqueta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/campoCalle"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/contenedorCalle"
+                style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:inputType="textPostalAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="12dp"
+                android:hint="@string/direcciones_campo_calle"
+                app:startIconDrawable="@drawable/ic_location"
+                app:layout_constraintTop_toBottomOf="@id/contenedorEtiqueta">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/contenedorColonia"
-            style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="@string/direcciones_campo_colonia"
-            app:startIconDrawable="@drawable/ic_location"
-            app:layout_constraintTop_toBottomOf="@id/contenedorCalle">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoCalle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:inputType="textPostalAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/campoColonia"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/contenedorColonia"
+                style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="12dp"
+                android:hint="@string/direcciones_campo_colonia"
+                app:startIconDrawable="@drawable/ic_location"
+                app:layout_constraintTop_toBottomOf="@id/contenedorCalle">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/contenedorCiudad"
-            style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="@string/direcciones_campo_ciudad"
-            app:startIconDrawable="@drawable/ic_location"
-            app:layout_constraintEnd_toStartOf="@id/contenedorCodigoPostal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/contenedorColonia">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoColonia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/campoCiudad"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/contenedorCiudad"
+                style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="12dp"
+                android:hint="@string/direcciones_campo_ciudad"
+                app:startIconDrawable="@drawable/ic_location"
+                app:layout_constraintTop_toBottomOf="@id/contenedorColonia">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/contenedorCodigoPostal"
-            style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
-            android:hint="@string/direcciones_campo_codigo_postal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/contenedorCiudad"
-            app:layout_constraintTop_toBottomOf="@id/contenedorColonia">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoCiudad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/campoCodigoPostal"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/contenedorCodigoPostal"
+                style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:inputType="number"
-                android:maxLength="5" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="12dp"
+                android:hint="@string/direcciones_campo_codigo_postal"
+                app:startIconDrawable="@drawable/ic_location"
+                app:layout_constraintTop_toBottomOf="@id/contenedorCiudad">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/contenedorTelefono"
-            style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:hint="@string/direcciones_campo_telefono"
-            app:startIconDrawable="@drawable/ic_phone"
-            app:layout_constraintTop_toBottomOf="@id/contenedorCiudad">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoCodigoPostal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/campoTelefono"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/contenedorTelefono"
+                style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:inputType="phone" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="12dp"
+                android:hint="@string/direcciones_campo_telefono"
+                app:startIconDrawable="@drawable/ic_phone"
+                app:layout_constraintTop_toBottomOf="@id/contenedorCodigoPostal">
 
-        <CheckBox
-            android:id="@+id/casillaPredeterminada"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/direcciones_campo_predeterminada"
-            app:layout_constraintTop_toBottomOf="@id/contenedorTelefono" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/campoTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <ProgressBar
-            android:id="@+id/indicadorCarga"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/casillaPredeterminada" />
+            <CheckBox
+                android:id="@+id/casillaPredeterminada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/direcciones_campo_predeterminada"
+                app:layout_constraintTop_toBottomOf="@id/contenedorTelefono" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/botonGuardar"
-            style="@style/Widget.Reboot.Boton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/direcciones_boton_guardar"
-            app:layout_constraintTop_toBottomOf="@id/indicadorCarga" />
+            <ProgressBar
+                android:id="@+id/indicadorCarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/casillaPredeterminada" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botonGuardar"
+                style="@style/Widget.Reboot.Boton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/direcciones_boton_guardar"
+                app:layout_constraintTop_toBottomOf="@id/indicadorCarga" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

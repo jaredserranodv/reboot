@@ -42,7 +42,7 @@
     <fragment
         android:id="@+id/detalleArticuloFragment"
         android:name="com.buap.reboot.presentacion.detalleArticulo.DetalleArticuloFragment"
-        android:label="">
+        android:label="@string/detalle_titulo">
         <argument android:name="idArticulo" app:argType="long" />
         <action
             android:id="@+id/accion_detalle_a_pago"
@@ -79,7 +79,11 @@
     <fragment
         android:id="@+id/buzonFragment"
         android:name="com.buap.reboot.presentacion.notificaciones.BuzonFragment"
-        android:label="@string/buzon_titulo" />
+        android:label="@string/buzon_titulo">
+        <action
+            android:id="@+id/accion_buzon_a_detalle"
+            app:destination="@id/detalleArticuloFragment" />
+    </fragment>
 
     <!--
         Subgrafo anidado con id = item del menu inferior ("perfilFragment"), para que

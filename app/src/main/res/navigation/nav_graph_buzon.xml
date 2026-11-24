@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_buzon"
+    app:startDestination="@id/buzonFragment">
+
+    <fragment
+        android:id="@+id/buzonFragment"
+        android:name="com.buap.reboot.presentacion.notificaciones.BuzonFragment"
+        android:label="@string/buzon_titulo">
+        <action
+            android:id="@+id/accion_buzon_a_detalle"
+            app:destination="@id/detalleArticuloFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalleArticuloFragment"
+        android:name="com.buap.reboot.presentacion.detalleArticulo.DetalleArticuloFragment"
+        android:label="@string/detalle_titulo">
+        <argument android:name="idArticulo" app:argType="long" />
+        <action
+            android:id="@+id/accion_detalle_a_pago"
+            app:destination="@id/pagoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pagoFragment"
+        android:name="com.buap.reboot.presentacion.pago.PagoFragment"
+        android:label="@string/pago_titulo">
+        <argument android:name="idArticulo" app:argType="long" />
+        <action
+            android:id="@+id/accion_pago_a_confirmacion"
+            app:destination="@id/confirmacionCompraFragment"
+            app:popUpTo="@id/buzonFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmacionCompraFragment"
+        android:name="com.buap.reboot.presentacion.confirmacionCompra.ConfirmacionCompraFragment"
+        android:label="@string/confirmacion_titulo">
+        <argument android:name="idTransaccion" app:argType="long" />
+        <action
+            android:id="@+id/accion_confirmacion_a_compras"
+            app:destination="@id/misComprasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/misComprasFragment"
+        android:name="com.buap.reboot.presentacion.misCompras.MisComprasFragment"
+        android:label="@string/compras_titulo">
+        <action
+            android:id="@+id/accion_compras_a_resena"
+            app:destination="@id/dejarResenaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dejarResenaFragment"
+        android:name="com.buap.reboot.presentacion.dejarResena.DejarResenaFragment"
+        android:label="@string/resena_titulo">
+        <argument android:name="idTransaccion" app:argType="long" />
+        <argument android:name="idArticulo" app:argType="long" />
+        <argument android:name="idVendedor" app:argType="long" />
+    </fragment>
+</navigation>

@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import com.buap.reboot.AplicacionReboot
 import com.buap.reboot.R
 import com.buap.reboot.databinding.ActivityRegistroBinding
+import com.buap.reboot.presentacion.comun.ActividadBase
 import com.buap.reboot.presentacion.comun.FabricaViewModel
 
-class RegistroActivity : AppCompatActivity() {
+class RegistroActivity : ActividadBase() {
 
     private lateinit var binding: ActivityRegistroBinding
 
@@ -23,6 +23,8 @@ class RegistroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.toolbar.setNavigationOnClickListener { finish() }
 
         binding.campoPreguntaSeguridad.setAdapter(
             ArrayAdapter(this, android.R.layout.simple_list_item_1, resources.getStringArray(R.array.preguntas_seguridad))

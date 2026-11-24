@@ -43,6 +43,8 @@ class ResultadosBusquedaFragment :
             ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, resources.getStringArray(R.array.estados_articulo))
         )
 
+        binding.campoCategoria.setOnItemClickListener { _, _, _, _ -> buscarConFiltrosActuales() }
+        binding.campoEstado.setOnItemClickListener { _, _, _, _ -> buscarConFiltrosActuales() }
         binding.botonAplicarFiltros.setOnClickListener { buscarConFiltrosActuales() }
 
         viewModel.estado.observe(viewLifecycleOwner) { estado ->
@@ -51,27 +53,39 @@ class ResultadosBusquedaFragment :
             binding.textoVacio.visibility = if (!estado.cargando && estado.articulos.isEmpty()) View.VISIBLE else View.GONE
         }
 
-        val textoInicial = arguments?.getString("texto").orEmpty()
-        val categoriaInicial = arguments?.getString("categoria").orEmpty()
+        val textoInicial = arguments?.getString("texto")?.trim().orEmpty()
+        val categoriaInicial = arguments?.getString("categoria")?.trim().orEmpty()
         if (categoriaInicial.isNotEmpty()) {
             binding.campoCategoria.setText(categoriaInicial, false)
         }
-        viewModel.buscar(FiltrosBusqueda(texto = textoInicial, categoria = categoriaInicial.takeIf { it.isNotEmpty() }))
+        val textoFiltro = if (categoriaInicial.isNotEmpty() && textoInicial.equals(categoriaInicial, ignoreCase = true)) {
+            ""
+        } else {
+            textoInicial
+        }
+        viewModel.buscar(FiltrosBusqueda(texto = textoFiltro, categoria = categoriaInicial.takeIf { it.isNotEmpty() }))
     }
 
     private fun buscarConFiltrosActuales() {
         val precioMinimo = binding.campoPrecioMinimo.text?.toString()?.toDoubleOrNull()
         val precioMaximo = binding.campoPrecioMaximo.text?.toString()?.toDoubleOrNull()
-        val estado = binding.campoEstado.text?.toString()?.takeIf { it.isNotBlank() }
+        val estado = binding.campoEstado.text?.toString()?.trim()?.takeIf { it.isNotBlank() }
             ?.let { EstadoArticulo.desdeEtiqueta(it) }
+        val categoria = binding.campoCategoria.text?.toString()?.trim()?.takeIf { it.isNotBlank() }
+        val textoArg = arguments?.getString("texto")?.trim().orEmpty()
+        val texto = if (categoria != null && textoArg.equals(categoria, ignoreCase = true)) {
+            ""
+        } else {
+            textoArg
+        }
 
         viewModel.buscar(
             FiltrosBusqueda(
-                texto = arguments?.getString("texto").orEmpty(),
-                categoria = binding.campoCategoria.text?.toString()?.takeIf { it.isNotBlank() },
+                texto = texto,
+                categoria = categoria,
                 precioMinimo = precioMinimo,
                 precioMaximo = precioMaximo,
-                ciudad = binding.campoCiudad.text?.toString()?.takeIf { it.isNotBlank() },
+                ciudad = binding.campoCiudad.text?.toString()?.trim()?.takeIf { it.isNotBlank() },
                 estadoArticulo = estado
             )
         )

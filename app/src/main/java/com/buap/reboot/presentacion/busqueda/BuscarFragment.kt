@@ -25,7 +25,13 @@ class BuscarFragment : FragmentBase<FragmentBuscarBinding>(FragmentBuscarBinding
         }
 
         resources.getStringArray(R.array.categorias_populares).forEach { categoria ->
-            binding.grupoCategorias.addView(crearChip(categoria) { buscar(categoria) })
+            binding.grupoCategorias.addView(crearChip(categoria) {
+                viewModel.registrarBusqueda(categoria)
+                findNavController().navigate(
+                    R.id.accion_buscar_a_resultados,
+                    android.os.Bundle().apply { putString("categoria", categoria.trim()) }
+                )
+            })
         }
 
         viewModel.estado.observe(viewLifecycleOwner) { estado ->

@@ -4,15 +4,19 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.buap.reboot.AplicacionReboot
 import com.buap.reboot.MainActivity
 import com.buap.reboot.databinding.ActivityLoginBinding
+import com.buap.reboot.presentacion.comun.ActividadBase
 import com.buap.reboot.presentacion.comun.FabricaViewModel
 import com.buap.reboot.presentacion.recuperarContrasena.RecuperarContrasenaActivity
 import com.buap.reboot.presentacion.registro.RegistroActivity
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : ActividadBase() {
 
     private lateinit var binding: ActivityLoginBinding
 
@@ -50,5 +54,16 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             }
         }
+    }
+
+    override fun aplicarInsetsSeguros() {
+        WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = true
+        val paddingSuperiorOriginal = binding.root.paddingTop
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val statusBarTop = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top
+            v.updatePadding(top = paddingSuperiorOriginal + statusBarTop)
+            insets
+        }
+        ViewCompat.requestApplyInsets(binding.root)
     }
 }

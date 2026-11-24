@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_vender"
+    app:startDestination="@id/venderArticuloFragment">
+
+    <fragment
+        android:id="@+id/venderArticuloFragment"
+        android:name="com.buap.reboot.presentacion.venderArticulo.VenderArticuloFragment"
+        android:label="@string/nav_vender">
+        <action
+            android:id="@+id/accion_vender_a_buscar"
+            app:destination="@id/buscarFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/buscarFragment"
+        android:name="com.buap.reboot.presentacion.busqueda.BuscarFragment"
+        android:label="@string/nav_buscar" />
+</navigation>

@@ -54,7 +54,7 @@
     <string name="publicaciones_boton_reactivar">Reactivar</string>
     <string name="publicaciones_boton_resenar_comprador">Reseñar comprador</string>
 
-    <string name="direcciones_titulo">Mis direcciones</string>
+    <string name="direcciones_titulo">Direcciones de envío</string>
     <string name="direcciones_vacio">No tienes direcciones guardadas</string>
     <string name="direcciones_badge_predeterminada">Predeterminada</string>
     <string name="direcciones_boton_editar">Editar</string>
@@ -104,7 +104,7 @@
     <string name="buscar_recientes_titulo">Búsquedas recientes</string>
     <string name="buscar_categorias_titulo">Categorías populares</string>
 
-    <string name="resultados_titulo">Resultados</string>
+    <string name="resultados_titulo">Resultados de búsqueda</string>
     <string name="resultados_filtros">Filtros</string>
     <string name="resultados_filtro_categoria">Categoría</string>
     <string name="resultados_filtro_precio">Precio</string>
@@ -112,6 +112,8 @@
     <string name="resultados_filtro_estado">Estado</string>
     <string name="resultados_vacio">No se encontraron artículos</string>
     <string name="resultados_aplicar_filtros">Aplicar filtros</string>
+
+    <string name="detalle_titulo">Vista de artículo</string>
 
     <string name="detalle_boton_comprar">Comprar ahora</string>
     <string name="detalle_vendedor_titulo">Vendedor</string>

@@ -10,10 +10,10 @@ import com.buap.reboot.data.bd.entidades.ArticuloEntity
 private const val SQL_BUSCAR = """
     SELECT * FROM articulos
     WHERE disponible = 1
-      AND (:texto IS NULL OR titulo LIKE '%' || :texto || '%')
-      AND (:categoria IS NULL OR categoria = :categoria)
-      AND (:ciudad IS NULL OR ciudad = :ciudad)
-      AND (:estadoArticulo IS NULL OR estado_articulo = :estadoArticulo)
+      AND (:texto IS NULL OR :texto = '' OR LOWER(titulo) LIKE '%' || LOWER(:texto) || '%')
+      AND (:categoria IS NULL OR :categoria = '' OR LOWER(TRIM(categoria)) = LOWER(TRIM(:categoria)))
+      AND (:ciudad IS NULL OR :ciudad = '' OR LOWER(TRIM(ciudad)) = LOWER(TRIM(:ciudad)))
+      AND (:estadoArticulo IS NULL OR :estadoArticulo = '' OR LOWER(TRIM(estado_articulo)) = LOWER(TRIM(:estadoArticulo)))
       AND (:precioMinimo IS NULL OR precio >= :precioMinimo)
       AND (:precioMaximo IS NULL OR precio <= :precioMaximo)
     ORDER BY fecha_publicacion DESC

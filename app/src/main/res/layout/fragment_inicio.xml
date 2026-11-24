@@ -5,6 +5,16 @@
     android:layout_height="match_parent"
     android:background="@color/reboot_fondo">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.Reboot.Toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/inicio_titulo" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/contenedorBusqueda"
         style="@style/Widget.Reboot.TextInputLayout.OutlinedBox"
@@ -18,17 +28,17 @@
         app:endIconMode="custom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/campoBusqueda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
             android:cursorVisible="false"
             android:focusable="false"
-            android:inputType="none" />
+            android:inputType="none"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <HorizontalScrollView

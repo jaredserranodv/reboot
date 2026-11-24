@@ -11,9 +11,9 @@ class RepositorioArticulosImpl(private val articuloDao: ArticuloDao) : Repositor
 
     override fun buscar(filtros: FiltrosBusqueda): List<Articulo> = enIO {
         articuloDao.buscar(
-            texto = filtros.texto.takeIf { it.isNotBlank() },
-            categoria = filtros.categoria,
-            ciudad = filtros.ciudad,
+            texto = filtros.texto.trim().takeIf { it.isNotBlank() },
+            categoria = filtros.categoria?.trim()?.takeIf { it.isNotBlank() },
+            ciudad = filtros.ciudad?.trim()?.takeIf { it.isNotBlank() },
             estadoArticulo = filtros.estadoArticulo?.etiqueta,
             precioMinimo = filtros.precioMinimo,
             precioMaximo = filtros.precioMaximo

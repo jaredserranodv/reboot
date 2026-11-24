@@ -25,7 +25,8 @@ class RepositorioNotificacionesImpl(private val notificacionDao: NotificacionDao
         titulo = titulo,
         mensaje = mensaje,
         fecha = fecha,
-        leida = leida
+        leida = leida,
+        idArticulo = idArticulo
     )
 
     private fun Notificacion.aEntidad() = NotificacionEntity(
@@ -34,6 +35,7 @@ class RepositorioNotificacionesImpl(private val notificacionDao: NotificacionDao
         titulo = titulo,
         mensaje = mensaje,
         fecha = fecha,
-        leida = leida
+        leida = leida,
+        idArticulo = idArticulo
     )
 }

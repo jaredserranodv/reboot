@@ -29,12 +29,6 @@ class InicioFragment : FragmentBase<FragmentInicioBinding>(FragmentInicioBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { root, windowInsets ->
-            val barraEstado = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-            root.updatePadding(top = barraEstado.top)
-            windowInsets
-        }
-
         binding.listaArticulos.layoutManager = GridLayoutManager(requireContext(), COLUMNAS_GRID)
         binding.listaArticulos.adapter = adapter
 

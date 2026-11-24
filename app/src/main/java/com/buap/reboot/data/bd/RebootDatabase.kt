@@ -24,7 +24,7 @@ import com.buap.reboot.data.dao.UsuarioDao
         UsuarioEntity::class, ArticuloEntity::class, TransaccionEntity::class, NotificacionEntity::class,
         ResenaEntity::class, DireccionEnvioEntity::class, MetodoPagoEntity::class
     ],
-    version = 3,
+    version = 4,
     exportSchema = false
 )
 abstract class RebootDatabase : RoomDatabase() {

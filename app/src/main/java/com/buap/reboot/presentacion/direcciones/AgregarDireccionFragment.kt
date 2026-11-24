@@ -32,6 +32,7 @@ class AgregarDireccionFragment :
         super.onViewCreated(view, savedInstanceState)
 
         if (esEdicion) {
+            binding.toolbar.setTitle(R.string.direcciones_editar_titulo)
             viewModel.cargarParaEditar(idDireccion)
         }
 

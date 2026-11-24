@@ -32,7 +32,7 @@ class EditarArticuloCasoUso(
             articulo.copy(
                 titulo = titulo.trim(),
                 descripcion = descripcion.trim(),
-                categoria = categoria,
+                categoria = categoria.trim(),
                 precio = precio,
                 estadoArticulo = estadoArticulo,
                 ciudad = ciudad.trim(),
